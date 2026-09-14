@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Identity Intensive — 6 Weeks | Charlene Morrissey</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fff1e3; --brand:#4d3e43; --deep:#2e2228; --gold:#c4a882; --gold-deep:#9c8264;
+    --serif:'Cormorant Garamond', serif; --sans:'Lato', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--brand); font-family:var(--sans); font-weight:300; line-height:1.7;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 32px;}
+  section{padding:110px 0;}
+  h1,h2,h3{font-family:var(--serif); font-weight:300; line-height:1.1;}
+  em{font-style:italic; color:var(--gold-deep);}
+
+  .page-frame{position:fixed; inset:14px; z-index:50; pointer-events:none; border:1px solid rgba(196,168,130,.4);}
+  .page-frame::before{content:''; position:absolute; inset:6px; border:1px solid rgba(196,168,130,.18);}
+
+  .logo{width:56px; height:56px; margin:0 auto 28px;}
+  .logo circle{fill:none; stroke:var(--brand); stroke-width:4;}
+  .logo text{fill:var(--brand); font-family:Georgia,serif; font-size:44px;}
+
+  .hero{padding-top:120px; text-align:center; position:relative; overflow:hidden;}
+  .hero::before{
+    content:''; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(196,168,130,.2) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 70%, rgba(77,62,67,.08) 0%, transparent 50%);
+  }
+  .hero .wrap{position:relative; z-index:1;}
+  .eyebrow{font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:26px;}
+  .hero h1{font-size:clamp(38px,7vw,74px); color:var(--deep); margin-bottom:30px; max-width:780px; margin-left:auto; margin-right:auto;}
+  .hero .sub{font-size:18px; color:var(--brand); max-width:560px; margin:0 auto 48px;}
+  .price-line{font-family:var(--serif); font-size:22px; color:var(--deep); margin-bottom:18px;}
+  .price-line strong{font-size:34px; font-weight:500; color:var(--gold-deep);}
+  .cta{
+    display:inline-block; padding:20px 48px; background:var(--deep); color:var(--cream);
+    text-decoration:none; font-size:14px; letter-spacing:.08em; text-transform:uppercase;
+    border:1px solid var(--gold); transition:background .25s;
+  }
+  .cta:hover{background:var(--brand);}
+  .cta-note{margin-top:18px; font-size:12px; color:var(--gold-deep); letter-spacing:.04em;}
+
+  .rule{width:60px; height:1px; background:var(--gold); margin:0 auto 40px;}
+
+  .theory{background:var(--deep); color:var(--cream); text-align:center;}
+  .theory .wrap{max-width:760px;}
+  .theory .eyebrow{color:var(--gold);}
+  .theory h2{color:var(--cream); font-size:clamp(30px,4.5vw,48px); margin-bottom:32px;}
+  .theory h2 em{color:var(--gold);}
+  .theory p{font-size:17px; color:rgba(255,241,227,0.82); margin-bottom:20px;}
+  .theory p:last-child{margin-bottom:0;}
+
+  .weeks{background:var(--cream);}
+  .weeks h2{text-align:center; font-size:clamp(30px,4.5vw,46px); color:var(--deep); margin-bottom:18px;}
+  .weeks .sub{text-align:center; color:var(--brand); max-width:520px; margin:0 auto 70px; font-size:16px;}
+  .week-list{border-top:1px solid rgba(77,62,67,0.18);}
+  .week-row{display:grid; grid-template-columns:90px 1fr; gap:32px; padding:30px 0; border-bottom:1px solid rgba(77,62,67,0.18); align-items:baseline;}
+  .week-row .num{font-family:var(--serif); font-size:32px; color:var(--gold-deep);}
+  .week-row h3{font-size:23px; font-weight:500; color:var(--deep); margin-bottom:8px;}
+  .week-row p{font-size:15px; color:var(--brand); max-width:56ch;}
+
+  .who{background:#f0e6d6; border-top:1px solid rgba(196,168,130,.4); border-bottom:1px solid rgba(196,168,130,.4);}
+  .who .wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .who h2{font-size:clamp(26px,3.4vw,38px); color:var(--deep); margin-bottom:24px;}
+  .who ul{list-style:none;}
+  .who li{font-size:15px; color:var(--brand); margin-bottom:16px; padding-left:22px; position:relative;}
+  .who li::before{content:'—'; position:absolute; left:0; color:var(--gold-deep);}
+
+  .pull{text-align:center; background:var(--cream);}
+  .pull blockquote{font-family:var(--serif); font-style:italic; font-size:clamp(24px,3.6vw,38px); color:var(--deep); max-width:800px; margin:0 auto 20px; line-height:1.5;}
+  .pull cite{font-style:normal; font-size:13px; letter-spacing:.1em; color:var(--gold-deep); text-transform:uppercase;}
+
+  .close{background:var(--deep); color:var(--cream); text-align:center;}
+  .close .eyebrow{color:var(--gold);}
+  .close h2{color:var(--cream); font-size:clamp(32px,5vw,54px); margin-bottom:26px;}
+  .close h2 em{color:var(--gold);}
+  .close p{color:rgba(255,241,227,.8); max-width:520px; margin:0 auto 44px; font-size:16px;}
+  .close .price-line{color:var(--cream);}
+  .close .price-line strong{color:var(--gold);}
+  .close .cta{background:var(--gold); color:var(--deep); border-color:var(--gold);}
+  .close .cta:hover{background:#d8bd97;}
+  .close .cta-note{color:rgba(255,241,227,.6);}
+
+  footer{padding:60px 0; text-align:center; font-size:12px; color:var(--gold-deep); letter-spacing:.04em;}
+
+  @media (max-width:720px){
+    .who .wrap{grid-template-columns:1fr;}
+    .week-row{grid-template-columns:50px 1fr; gap:18px;}
+    section{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page-frame"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 240 240"><circle cx="120" cy="120" r="95"/><text x="120" y="150" text-anchor="middle">.c</text></svg>
+    <p class="eyebrow">A 6-Week Identity Intensive</p>
+    <h1>You are not who they made you. <em>You are who you were before they touched you.</em></h1>
+    <p class="sub">Six weeks, live, in a small group, built entirely on The Mirror Theory — the framework I used to claw my own identity back from a truck accident that tried to erase me.</p>
+    <p class="price-line"><strong>$5,000</strong> &nbsp;·&nbsp; small group &nbsp;·&nbsp; starts this week</p>
+    <a class="cta" href="https://buy.stripe.com/eVq14h1m970t2Gugpl2sM03" target="_blank">Claim your seat</a>
+    <p class="cta-note">Seats are limited on purpose — this only works in a small room.</p>
+  </div>
+</section>
+
+<section class="theory">
+  <div class="wrap">
+    <p class="eyebrow">The Mirror Theory</p>
+    <h2>You cannot change what you have never actually <em>seen.</em></h2>
+    <p>Every identity you're carrying that isn't yours was handed to you by someone who needed you smaller, quieter, or easier to manage. You adapted. You survived. And somewhere in that survival, you lost track of who you were before any of it happened.</p>
+    <p>I don't coach you toward a better version of yourself. I hold up a mirror and show you the version that was already there — underneath the roles, the coping mechanisms, and the pain you were never taught what to do with.</p>
+    <p>That's the entire method. Not more information. Reflection you can't look away from.</p>
+  </div>
+</section>
+
+<section class="weeks">
+  <div class="wrap">
+    <h2>Six weeks. One return.</h2>
+    <p class="sub">Each week builds on the last — this isn't six separate topics, it's one journey back to yourself.</p>
+    <div class="week-list">
+      <div class="week-row">
+        <div class="num">01</div>
+        <div><h3>The Break</h3><p>Naming the moment — or the slow erosion — where you stopped being fully yourself.</p></div>
+      </div>
+      <div class="week-row">
+        <div class="num">02</div>
+        <div><h3>The Inheritance</h3><p>The generational trauma and patterns you never chose but have been carrying anyway.</p></div>
+      </div>
+      <div class="week-row">
+        <div class="num">03</div>
+        <div><h3>The Mask</h3><p>The roles and behaviours you built to stay safe, loved, or in control — and what they've cost you.</p></div>
+      </div>
+      <div class="week-row">
+        <div class="num">04</div>
+        <div><h3>The Body</h3><p>Where pain and trauma actually live once the mind has buried them — and how to finally let them go.</p></div>
+      </div>
+      <div class="week-row">
+        <div class="num">05</div>
+        <div><h3>The Mirror</h3><p>The direct, unfiltered confrontation with who you really are — no performance, nowhere to hide.</p></div>
+      </div>
+      <div class="week-row">
+        <div class="num">06</div>
+        <div><h3>The Return</h3><p>Integration. Coming home to yourself, and learning to stay there once the intensive ends.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div>
+      <h2>This is for you if</h2>
+      <ul>
+        <li>You're a high-level individual who has outgrown generic coaching</li>
+        <li>You know something underneath your identity has never been dealt with</li>
+        <li>You're ready for a mirror, not another person managing your feelings</li>
+        <li>You want a small group, not a crowd of hundreds</li>
+      </ul>
+    </div>
+    <div>
+      <h2>This is not for you if</h2>
+      <ul>
+        <li>You want more information rather than actual reflection</li>
+        <li>You're not ready to look directly at what's underneath the surface</li>
+        <li>You're looking for a quick fix rather than six weeks of real work</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pull">
+  <div class="wrap">
+    <blockquote>"I am not another coach. I am the mirror you cannot hide from."</blockquote>
+    <cite>Charlene Morrissey</cite>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="eyebrow">The Identity Intensive</p>
+    <h2>Six weeks to <em>come home</em> to who you actually are.</h2>
+    <p>This isn't therapy, and it isn't a course. It's a small, live room where you're finally seen — by someone who has actually walked through the fire you're describing.</p>
+    <p class="price-line"><strong>$5,000</strong> &nbsp;·&nbsp; small group &nbsp;·&nbsp; starts this week</p>
+    <a class="cta" href="https://buy.stripe.com/eVq14h1m970t2Gugpl2sM03" target="_blank">Claim your seat now</a>
+    <p class="cta-note">Once the group is full, this cohort is closed.</p>
+  </div>
+</section>
+
+<footer>Charlene Morrissey &nbsp;·&nbsp; hello@charlenemorrissey.com</footer>
+
+</body>
+</html>
